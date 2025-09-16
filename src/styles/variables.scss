@@ -1,0 +1,17 @@
+// Global or Tailwind
+@theme {
+  // FontSize
+  --text-2xs: 10px;
+
+  // Color
+  --color-primary: #007aff;
+
+  // TextColor
+  --text-color-body: #333;
+
+  // BackgroundColor
+  --background-color-body: #f8f8f8;
+
+  // BorderColor
+  --border-color-divider: var(--color-gray-100);
+}
