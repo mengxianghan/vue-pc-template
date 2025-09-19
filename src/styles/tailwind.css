@@ -1,0 +1,31 @@
+@import 'tailwindcss';
+@import './variables.css';
+
+@plugin '@iconify/tailwind4' {
+  prefixes: tdesign, tabler;
+}
+
+@layer base {
+  body {
+    font-size: 14px;
+    font-family:
+      -apple-system,
+      BlinkMacSystemFont,
+      'Helvetica Neue',
+      Helvetica,
+      Segoe UI,
+      Arial,
+      Roboto,
+      'PingFang SC',
+      'miui',
+      'Hiragino Sans GB',
+      'Microsoft Yahei',
+      sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img {
+    display: inline-block;
+  }
+}
