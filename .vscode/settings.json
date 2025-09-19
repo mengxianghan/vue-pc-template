@@ -49,5 +49,5 @@
   ],
 
   // Tailwind CSS
-  "tailwindCSS.experimental.configFile": "src/styles/index.scss"
+  "tailwindCSS.experimental.configFile": "src/styles/tailwind.css"
 }
