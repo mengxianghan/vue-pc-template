@@ -1,10 +1,10 @@
 import path from 'node:path'
 import process from 'node:process'
 import url from 'node:url'
-import { TDesignResolver } from '@tdesign-vue-next/auto-import-resolver'
 import vue from '@vitejs/plugin-vue'
 import { visualizer } from 'rollup-plugin-visualizer'
 import AutoImport from 'unplugin-auto-import/vite'
+import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
 import vueDevTools from 'vite-plugin-vue-devtools'
@@ -20,15 +20,13 @@ export default defineConfig(({ mode }) => {
       vueDevTools(),
       AutoImport({
         resolvers: [
-          TDesignResolver({
-            library: 'vue-next',
-          }),
+          AntDesignVueResolver(),
         ],
       }),
       Components({
         resolvers: [
-          TDesignResolver({
-            library: 'vue-next',
+          AntDesignVueResolver({
+            importStyle: false,
           }),
         ],
       }),
@@ -41,6 +39,7 @@ export default defineConfig(({ mode }) => {
     ],
     server: {
       host: '0.0.0.0',
+      port: 9000,
       proxy: {
         '/api_base': {
           target: '/',

@@ -1,4 +1,5 @@
 export * from './basic'
+export * from './get'
 export * from './interceptor'
 export * from './is'
 export * from './mapping'

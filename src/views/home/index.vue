@@ -2,8 +2,8 @@
 </script>
 
 <template>
-  <div>
-    首页
+  <div class="flex items-center justify-center h-screen w-screen text-4xl">
+    恭喜大佬脱离屎山
   </div>
 </template>
 

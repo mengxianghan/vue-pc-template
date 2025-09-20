@@ -15,11 +15,12 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
     "@types/lodash-es": "^4.17.12",
+    "ant-design-vue": "^4.2.6",
     "js-cookie": "^3.0.5",
     "lodash-es": "^4.17.21",
     "pinia": "^3.0.3",
-    "tdesign-vue-next": "^1.16.1",
     "vue": "^3.5.20",
     "vue-router": "^4.5.1",
     "xy-enum": "^1.4.4",
@@ -35,7 +36,6 @@
     "@iconify/tailwind": "^1.2.0",
     "@iconify/tailwind4": "^1.0.6",
     "@tailwindcss/postcss": "^4.1.13",
-    "@tdesign-vue-next/auto-import-resolver": "^0.1.1",
     "@thedutchcoder/postcss-rem-to-px": "^0.0.2",
     "@types/node": "^24.3.0",
     "@vitejs/plugin-vue": "^6.0.1",
