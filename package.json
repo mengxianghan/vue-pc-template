@@ -35,7 +35,6 @@
     "@iconify/tailwind": "^1.2.0",
     "@iconify/tailwind4": "^1.0.6",
     "@tailwindcss/postcss": "^4.1.13",
-    "@tailwindcss/vite": "^4.1.13",
     "@tdesign-vue-next/auto-import-resolver": "^0.1.1",
     "@thedutchcoder/postcss-rem-to-px": "^0.0.2",
     "@types/node": "^24.3.0",
