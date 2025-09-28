@@ -1,9 +1,11 @@
+import type { ComponentResolver } from 'unplugin-vue-components'
 import path from 'node:path'
 import process from 'node:process'
 import url from 'node:url'
 import vue from '@vitejs/plugin-vue'
 import { visualizer } from 'rollup-plugin-visualizer'
 import AutoImport from 'unplugin-auto-import/vite'
+import { kebabCase } from 'unplugin-vue-components'
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
@@ -11,6 +13,23 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 const __filename = url.fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
+
+function CustomComponentResolver(): ComponentResolver {
+  return {
+    type: 'component',
+    resolve: (componentName: string) => {
+      if (componentName.startsWith('X')) {
+        const name = componentName.slice(1)
+
+        return {
+          name,
+          as: componentName,
+          from: `@/components/${kebabCase(name)}/index`,
+        }
+      }
+    },
+  }
+}
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
@@ -24,10 +43,12 @@ export default defineConfig(({ mode }) => {
         ],
       }),
       Components({
+        dirs: [],
         resolvers: [
           AntDesignVueResolver({
             importStyle: false,
           }),
+          CustomComponentResolver(),
         ],
       }),
       process.env.npm_lifecycle_event === 'report' && visualizer({
