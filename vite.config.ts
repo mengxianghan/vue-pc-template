@@ -38,12 +38,14 @@ export default defineConfig(({ mode }) => {
       vue(),
       vueDevTools(),
       AutoImport({
+        dts: 'src/types/auto-imports.d.ts',
         resolvers: [
           AntDesignVueResolver(),
         ],
       }),
       Components({
         dirs: [],
+        dts: 'src/types/components.d.ts',
         resolvers: [
           AntDesignVueResolver({
             importStyle: false,
@@ -60,7 +62,6 @@ export default defineConfig(({ mode }) => {
     ],
     server: {
       host: '0.0.0.0',
-      port: 9000,
       proxy: {
         '/api_base': {
           target: '/',
