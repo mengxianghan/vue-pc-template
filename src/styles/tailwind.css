@@ -2,7 +2,7 @@
 @import './variables.css';
 
 @plugin '@iconify/tailwind4' {
-  prefixes: tdesign, tabler;
+  prefixes: tdesign;
 }
 
 @layer base {
