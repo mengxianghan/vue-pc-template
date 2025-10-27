@@ -22,6 +22,7 @@
     "js-cookie": "^3.0.5",
     "lodash-es": "^4.17.21",
     "pinia": "^3.0.3",
+    "tailwind-merge": "^3.3.1",
     "vue": "^3.5.22",
     "vue-router": "^4.5.1",
     "xy-enum": "^1.4.4",
@@ -60,9 +61,6 @@
   "lint-staged": {
     "*.{ts,vue,js,json,scss}": [
       "pnpm lint"
-    ],
-    "*.{vue}": [
-      "pnpm type-check"
     ]
   }
 }
