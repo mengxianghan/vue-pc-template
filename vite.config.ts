@@ -81,7 +81,6 @@ export default defineConfig(({ mode }) => {
       rollupOptions: {
         output: {
           manualChunks: {
-            eruda: ['eruda'],
           },
         },
       },
