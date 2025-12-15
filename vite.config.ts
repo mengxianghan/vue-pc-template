@@ -19,12 +19,14 @@ function CustomComponentResolver(): ComponentResolver {
     type: 'component',
     resolve: (componentName: string) => {
       if (componentName.startsWith('X')) {
+        const isApi = componentName.endsWith('Api')
         const name = componentName.slice(1)
+        const apiName = componentName.slice(1, -3)
 
         return {
           name,
           as: componentName,
-          from: `@/components/${kebabCase(name)}/index`,
+          from: `@/components/${kebabCase(isApi ? apiName : name)}`,
         }
       }
     },
@@ -38,14 +40,15 @@ export default defineConfig(({ mode }) => {
       vue(),
       vueDevTools(),
       AutoImport({
-        dts: 'src/types/auto-imports.d.ts',
+        dts: 'src/auto-imports.d.ts',
         resolvers: [
           AntDesignVueResolver(),
+          CustomComponentResolver(),
         ],
       }),
       Components({
         dirs: [],
-        dts: 'src/types/components.d.ts',
+        dts: 'src/components.d.ts',
         resolvers: [
           AntDesignVueResolver({
             importStyle: false,
