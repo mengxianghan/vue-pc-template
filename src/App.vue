@@ -1,11 +1,12 @@
 <script setup lang="ts">
+import type { ThemeConfig } from 'ant-design-vue/es/config-provider/context'
 import zhCN from 'ant-design-vue/es/locale/zh_CN'
 import { ref } from 'vue'
-import { getVariable } from '@/utils'
+import { getPropertyValue } from '@/utils'
 
-const themeConfig = ref({
+const themeConfig = ref<ThemeConfig>({
   token: {
-    colorPrimary: getVariable('--color-primary'),
+    colorPrimary: getPropertyValue('--color-primary'),
     borderRadius: 4,
   },
 })
