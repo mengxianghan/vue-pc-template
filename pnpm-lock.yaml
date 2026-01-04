@@ -17,6 +17,9 @@ importers:
       ant-design-vue:
         specifier: ^4.2.6
         version: 4.2.6(vue@3.5.22(typescript@5.9.3))
+      axios:
+        specifier: ^1.13.2
+        version: 1.13.2
       js-cookie:
         specifier: ^3.0.5
         version: 3.0.5
@@ -35,6 +38,9 @@ importers:
       vue-router:
         specifier: ^4.5.1
         version: 4.5.1(vue@3.5.22(typescript@5.9.3))
+      xy-config:
+        specifier: ^1.0.0
+        version: 1.0.0
       xy-enum:
         specifier: ^1.4.4
         version: 1.4.4
@@ -1420,8 +1426,8 @@ packages:
     peerDependencies:
       postcss: ^8.1.0
 
-  axios@1.10.0:
-    resolution: {integrity: sha512-/1xYAC4MP/HEG+3duIhFr4ZQXR4sQXOIe+o6sdqzeykGLx6Upp/1p8MHqhINOvGeP7xyNHe7tsiJByc4SSVUxw==}
+  axios@1.13.2:
+    resolution: {integrity: sha512-VPk9ebNqPcy5lRGuSlKx752IlDatOjT9paPlm8A7yOuW2Fbvp4X3JznJtT4f0GzGLLiWE9W8onz51SqLYwzGaA==}
 
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -2076,8 +2082,8 @@ packages:
       debug:
         optional: true
 
-  form-data@4.0.3:
-    resolution: {integrity: sha512-qsITQPfmvMOSAdeyZ+12I1c+CKSstAFAwu+97zrnWAbIr5u8wfsExUzCesVLC8NgHuRUqNN4Zy6UPWUTRGslcA==}
+  form-data@4.0.5:
+    resolution: {integrity: sha512-8RipRLol37bNs2bhoV67fiTEvdTrbMUYcFTiy3+wuuOnUog2QBHCZWXDRijWQfAkhBj2Uf5UnVaiWwA5vdd82w==}
     engines: {node: '>= 6'}
 
   format@0.2.2:
@@ -3439,6 +3445,10 @@ packages:
   xml-name-validator@4.0.0:
     resolution: {integrity: sha512-ICP2e+jsHvAj2E2lIHxa5tjXRlKDJo4IdvPvCXbXQGdzSfmSpNVyIKMvoZHjDY9DP0zV17iI85o90vRFXNccRw==}
     engines: {node: '>=12'}
+
+  xy-config@1.0.0:
+    resolution: {integrity: sha512-4zCfG1DtzY45tACO7uzMJ1s2TIqYQc8rUUT9lux/NeXxT6dwGvOaTfshPvZ9Q5LhfdrMN/el+7QvBweCt6YjNA==}
+    engines: {node: '>=20', npm: '>=10', pnpm: '>=10'}
 
   xy-enum@1.4.4:
     resolution: {integrity: sha512-HG6tQx+xo3Wp9jUhYk+t+hlEwVaGCxzkmxfmVM1Mcq34qwjBbq/2q48S0mJoirE9PrMiLOV0drsKilxvmGpPvQ==}
@@ -4858,10 +4868,10 @@ snapshots:
       postcss: 8.5.6
       postcss-value-parser: 4.2.0
 
-  axios@1.10.0:
+  axios@1.13.2:
     dependencies:
       follow-redirects: 1.15.9
-      form-data: 4.0.3
+      form-data: 4.0.5
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
       - debug
@@ -5571,7 +5581,7 @@ snapshots:
 
   follow-redirects@1.15.9: {}
 
-  form-data@4.0.3:
+  form-data@4.0.5:
     dependencies:
       asynckit: 0.4.0
       combined-stream: 1.0.8
@@ -6991,11 +7001,13 @@ snapshots:
 
   xml-name-validator@4.0.0: {}
 
+  xy-config@1.0.0: {}
+
   xy-enum@1.4.4: {}
 
   xy-http@1.0.0:
     dependencies:
-      axios: 1.10.0
+      axios: 1.13.2
     transitivePeerDependencies:
       - debug
 

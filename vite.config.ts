@@ -66,10 +66,10 @@ export default defineConfig(({ mode }) => {
     server: {
       host: '0.0.0.0',
       proxy: {
-        '/api_base': {
+        '/api_basic': {
           target: '/',
           changeOrigin: true,
-          rewrite: (path: string) => path.replace('/api_base', ''),
+          rewrite: (path: string) => path.replace('/api_basic', ''),
         },
       },
     },
