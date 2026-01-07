@@ -40,7 +40,7 @@ export default defineConfig(({ mode }) => {
       vue(),
       vueDevTools(),
       AutoImport({
-        dts: 'src/auto-imports.d.ts',
+        dts: 'src/types/auto-imports.d.ts',
         resolvers: [
           AntDesignVueResolver(),
           CustomComponentResolver(),
@@ -48,7 +48,7 @@ export default defineConfig(({ mode }) => {
       }),
       Components({
         dirs: [],
-        dts: 'src/components.d.ts',
+        dts: 'src/types/auto-components.d.ts',
         resolvers: [
           AntDesignVueResolver({
             importStyle: false,

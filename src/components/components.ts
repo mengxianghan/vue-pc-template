@@ -1,1 +1,1 @@
-export { Demo, DemoApi } from './demo'
+export * from './demo'
