@@ -1,16 +1,16 @@
-import type { AxiosRequestConfig, AxiosResponse } from 'axios'
+import type { HttpOptions } from 'xy-http'
 import { message } from 'ant-design-vue'
-import Http from 'xy-http'
+import { createHttp } from 'xy-http'
 import { config } from '@/configs'
-import { ErrorResponse } from '@/utils/thorw'
+import { ResponseError } from './errors'
 
 const REQUEST_MESSAGE_KEY = 'request_message_key'
 
-const options = {
-  interceptorRequest: (request: AxiosRequestConfig) => {
+const options: HttpOptions = {
+  interceptorRequest: (request) => {
     return request
   },
-  interceptorResponse: (response: AxiosResponse) => {
+  interceptorResponse: (response) => {
     const { code, message } = response.data
     if (config.includes('code.ignore', code)) {
       message.open({
@@ -18,11 +18,11 @@ const options = {
         key: REQUEST_MESSAGE_KEY,
         content: message,
       })
-      throw new ErrorResponse(message, code)
+      throw new ResponseError(message, code)
     }
     return response.data
   },
-  interceptorResponseCatch: (err: any) => {
+  interceptorResponseError: (err: any) => {
     message.open({
       type: 'error',
       key: REQUEST_MESSAGE_KEY,
@@ -32,7 +32,7 @@ const options = {
   },
 }
 
-export const basic = new Http({
+export const basic = createHttp({
   ...options,
   baseURL: config.get('url.apiBasic'),
 })
