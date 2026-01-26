@@ -20,7 +20,7 @@ const options: HttpOptions = {
       })
       throw new ResponseError(message, code)
     }
-    return response.data
+    return response
   },
   interceptorResponseError: (err: any) => {
     message.open({
