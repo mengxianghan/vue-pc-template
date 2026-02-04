@@ -1,5 +1,5 @@
 import type { HttpOptions } from 'xy-http'
-import { message } from 'ant-design-vue'
+import { message } from 'antdv-next'
 import { createHttp } from 'xy-http'
 import { config } from '@/configs'
 import { ResponseError } from './errors'

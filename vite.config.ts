@@ -2,11 +2,11 @@ import type { ComponentResolver } from 'unplugin-vue-components'
 import path from 'node:path'
 import process from 'node:process'
 import url from 'node:url'
+import { AntdvNextResolver } from '@antdv-next/auto-import-resolver'
 import vue from '@vitejs/plugin-vue'
 import { visualizer } from 'rollup-plugin-visualizer'
 import AutoImport from 'unplugin-auto-import/vite'
 import { kebabCase } from 'unplugin-vue-components'
-import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
 import vueDevTools from 'vite-plugin-vue-devtools'
@@ -42,7 +42,6 @@ export default defineConfig(({ mode }) => {
       AutoImport({
         dts: 'src/types/auto-imports.d.ts',
         resolvers: [
-          AntDesignVueResolver(),
           CustomComponentResolver(),
         ],
       }),
@@ -50,9 +49,7 @@ export default defineConfig(({ mode }) => {
         dirs: [],
         dts: 'src/types/auto-components.d.ts',
         resolvers: [
-          AntDesignVueResolver({
-            importStyle: false,
-          }),
+          AntdvNextResolver(),
           CustomComponentResolver(),
         ],
       }),

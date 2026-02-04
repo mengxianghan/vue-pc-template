@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { ThemeConfig } from 'ant-design-vue/es/config-provider/context'
-import zhCN from 'ant-design-vue/es/locale/zh_CN'
+import type { ThemeConfig } from 'antdv-next'
+import zhCN from 'antdv-next/locale/zh_CN'
 import { ref } from 'vue'
 import { getPropertyValue } from '@/utils'
 

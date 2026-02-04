@@ -1,11 +1,11 @@
-import type { FormInstance, Rule } from 'ant-design-vue/es/form'
+import type { FormInstance, FormProps } from 'antdv-next'
 import { ref } from 'vue'
 import { useResettableRef } from './use-resettable-ref'
 
 interface UseFormOptions<T, R> {
   formData: T
   formRecord?: R
-  formRules?: Record<string, Rule | Rule[]>
+  formRules?: FormProps['rules']
 }
 
 export function useForm<
@@ -14,7 +14,7 @@ export function useForm<
 >(options: UseFormOptions<T, R>) {
   const [formData, resetFormData] = useResettableRef<T>(options.formData)
   const formRecord = ref<R | null>(options?.formRecord || null)
-  const formRules = ref<Record<string, Rule | Rule[]>>(options?.formRules || {})
+  const formRules = ref <FormProps['rules']> (options?.formRules)
   const formLoading = ref(false)
   const formRef = ref<FormInstance>()
 

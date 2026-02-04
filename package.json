@@ -16,9 +16,9 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@ant-design/icons-vue": "^7.0.1",
+    "@antdv-next/icons": "^1.0.0",
     "@types/lodash-es": "^4.17.12",
-    "ant-design-vue": "^4.2.6",
+    "antdv-next": "^1.0.0",
     "axios": "^1.13.2",
     "js-cookie": "^3.0.5",
     "lodash-es": "^4.17.21",
@@ -32,6 +32,7 @@
     "xy-storage": "^4.0.0"
   },
   "devDependencies": {
+    "@antdv-next/auto-import-resolver": "^1.0.0",
     "@antfu/eslint-config": "^5.4.1",
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.0.0",
