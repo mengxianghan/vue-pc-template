@@ -1,4 +1,5 @@
 import type { ComponentResolver } from 'unplugin-vue-components'
+import type { PluginOption } from 'vite'
 import path from 'node:path'
 import process from 'node:process'
 import url from 'node:url'
@@ -59,7 +60,7 @@ export default defineConfig(({ mode }) => {
         gzipSize: true,
         brotliSize: true,
       }),
-    ],
+    ].filter(Boolean) as PluginOption[],
     server: {
       host: '0.0.0.0',
       proxy: {
